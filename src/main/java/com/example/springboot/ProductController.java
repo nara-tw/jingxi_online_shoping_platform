@@ -1,5 +1,6 @@
 package com.example.springboot;
 
+import com.example.springboot.exceptions.CustomIOException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -19,7 +20,7 @@ public class ProductController {
     }
 
     @GetMapping("/products")
-    public List<Product> listProducts() {
+    public List<Product> listProducts() throws CustomIOException {
         return productService.loadProductsFromJson();
     }
 }
