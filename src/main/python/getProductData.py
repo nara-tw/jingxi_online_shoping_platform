@@ -24,7 +24,7 @@ def generate_product_data(n):
 
 def save_to_json(file_path, data):
     with open(file_path, 'w') as f:
-        json.dump(data, f, indent=4)
+        json.dump(data, f)
 
 # Use environment variables for configuration
 ROOT_DIR = os.path.dirname(
