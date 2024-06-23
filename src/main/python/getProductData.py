@@ -27,7 +27,10 @@ def save_to_json(file_path, data):
         json.dump(data, f, indent=4)
 
 # Use environment variables for configuration
-output_file_path = os.getenv('OUTPUT_FILE_PATH', 'default_products.json')
+ROOT_DIR = os.path.dirname(
+    os.path.abspath(__file__)
+)
+output_file_path =  os.path.join(ROOT_DIR, 'data', os.getenv('OUTPUT_FILE_NAME', 'default_products.json'))
 number_of_products = int(os.getenv('NUMBER_OF_PRODUCTS', 10))
 
 # Generate products based on configuration
